@@ -2,7 +2,7 @@
 	<div class="container">
 		<MainTitle :title="title" :titleSub="titleSub" />
 		<SearchForm @@onChange="onChange" />
-		<ProductWrapper />
+		<ProductWrapper :data="searchProduct" />
 	</div>
 </template>
 <script>
