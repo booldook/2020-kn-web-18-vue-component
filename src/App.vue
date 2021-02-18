@@ -1,12 +1,14 @@
 <template>
 	<div class="container">
 		<MainTitle :title="title" :titleSub="titleSub" />
-		<SearchForm @@onChange="onChange"/>
+		<SearchForm @@onChange="onChange" />
+		<ProductWrapper />
 	</div>
 </template>
 <script>
 import MainTitle from './components/MainTitle.vue'
 import SearchForm from './components/SearchForm.vue'
+import ProductWrapper from './components/ProductWrapper.vue'
 import axios from 'axios'
 
 export default {
@@ -20,13 +22,17 @@ export default {
 			searchProduct: []
 		}
 	},
-	created() {
-
+	async created() {
+		try {
+			const r = await axios.get('/json/products.json')
+			this.product = r.data
+			this.searchProduct = r.data
+		}
+		catch(e) {
+			console.log(e)
+		}
 	},
-	components: {
-		MainTitle,
-		SearchForm
-	},
+	components: { MainTitle, SearchForm, ProductWrapper },
 	methods: {
 		onChange(v) {
 			this.query = v;

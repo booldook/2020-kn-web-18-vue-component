@@ -1,3 +1,12 @@
+# VUE와 REACT의 비교
+| vue | react |
+|------|------|
+| vue ui | create-react-app |
+| vue-router | react-router |
+| vuex | redux |
+| nuxt | next |
+
+
 # 18.vue-component
 
 ## Project setup
