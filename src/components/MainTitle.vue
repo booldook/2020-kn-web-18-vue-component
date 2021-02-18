@@ -7,10 +7,10 @@
 <script>
 export default {
 	name: 'MainTitle',
+	props: ['title', 'titleSub'],
 	data() {
 		return {
-			title: 'VUE | Component를 활용한 Vue 예제',
-			titleSub: 'Vue를 활용한 쇼핑몰 예제' 
+			 
 		}
 	}
 }

@@ -1,6 +1,6 @@
 <template>
 	<form>
-		<SearchInput />
+		<SearchInput @@onChange="onChange"/>
 	</form>
 </template>
 <script>
@@ -9,11 +9,16 @@ export default {
 	name: 'SearchForm',
 	data() {
 		return {
-			
+
 		}
 	},
 	components: {
 		SearchInput
+	},
+	methods: {
+		onChange(v) {
+			this.$emit('@onChange', v)
+		}
 	}
 }
 </script>
