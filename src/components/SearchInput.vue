@@ -18,10 +18,11 @@ export default {
 	},
 	methods: {
 		onClick(e) {
-			this.query = '';
+			this.query = ''
+			this.onKeyUp()
 		},
 		onKeyUp(e) {
-			this.$emit('@onChange', this.query);
+			this.$emit('@onChange', this.query)
 		}
 	}
 }
