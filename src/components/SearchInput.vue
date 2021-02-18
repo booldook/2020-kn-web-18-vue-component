@@ -1,6 +1,6 @@
 <template>
 	<div class="input-wrapper">
-		<input v-model="query" type="text" name="search" class="form-control" placeholder="검색할 상품명을 입력하세요." @keyup="onKeyUp">
+		<b-form-input v-model="query" placeholder="검색할 상품명을 입력하세요." />
 		<i v-show="query.length" @click="onClick" class="fa fa-times-circle"></i>
 	</div>
 </template>
@@ -16,14 +16,15 @@ export default {
 			query: ''
 		}
 	},
+	watch: {
+		query: function(n) {
+			this.$emit('@onChange', n)
+		}
+	},
 	methods: {
 		onClick(e) {
 			this.query = ''
-			this.onKeyUp()
 		},
-		onKeyUp(e) {
-			this.$emit('@onChange', this.query)
-		}
 	}
 }
 </script>

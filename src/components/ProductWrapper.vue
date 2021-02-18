@@ -1,6 +1,6 @@
 <template>
 	<div class="product-wrapper">
-		<Product v-for="v in data" :key="v.id" />
+		<Product v-for="v in data" :key="v.id" :v="v" />
 	</div>
 </template>
 <script>

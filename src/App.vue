@@ -10,6 +10,7 @@ import MainTitle from './components/MainTitle.vue'
 import SearchForm from './components/SearchForm.vue'
 import ProductWrapper from './components/ProductWrapper.vue'
 import axios from 'axios'
+import _ from 'lodash'
 
 export default {
 	name: 'App',
@@ -34,9 +35,10 @@ export default {
 	},
 	components: { MainTitle, SearchForm, ProductWrapper },
 	methods: {
-		onChange(v) {
-			this.query = v;
-			this.titleSub = v;
+		onChange(value) {
+			this.query = value;
+			//this.searchProduct = this.product.filter(v => v.title.includes(value))
+			this.searchProduct = _.filter(this.product, v => v.title.includes(value))
 		}
 	}
 }
