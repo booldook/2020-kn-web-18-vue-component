@@ -7,6 +7,8 @@
 <script>
 import MainTitle from './components/MainTitle.vue'
 import SearchForm from './components/SearchForm.vue'
+import axios from 'axios'
+
 export default {
 	name: 'App',
 	data() {
@@ -14,7 +16,12 @@ export default {
 			title: 'VUE | Component를 활용한 Vue 예제',
 			titleSub: 'Vue를 활용한 쇼핑몰 예제',
 			query: '',
+			product: [],
+			searchProduct: []
 		}
+	},
+	created() {
+
 	},
 	components: {
 		MainTitle,
